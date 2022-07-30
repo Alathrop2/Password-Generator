@@ -4,6 +4,55 @@ var charUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var charNum = '1234567890';
 var charSym = '!@#$%^&*()';
 
+var passHolder = '';
+var newPassword = '';
+
+window.alert(
+  'Welcome to the Password Generator! you will be given a few prompts, to determine the characters used in your password. Pleasae answer all of the questions. OK=yes, CACNEL=no'
+);
+var promptLength = window.prompt(
+  'First choose the length of your password! It must be at least 8 characters, but no more than 128'
+);
+if (promptLength < 8 || promptLength > 128) {
+  window.alert(
+    'must be at least 8 characters, and no more than 128 characters'
+  );
+}
+
+var promptLower = window.confirm(
+  'Do you want your password to conain Lowercase letters?'
+);
+if (promptLower) {
+  passHolder += charLower;
+  console.log(passHolder);
+}
+
+var promptUpper = window.confirm(
+  'Do you want your password to conain Uppercase letters?'
+);
+if (promptUpper) {
+  passHolder += charUpper;
+  console.log(passHolder);
+}
+var promptNum = window.confirm('Do you want your password to conain Numbers?');
+if (promptNum) {
+  passHolder += charNum;
+  console.log(passHolder);
+}
+
+var promptSym = window.confirm('Do you want your password to conain Symbols?');
+if (promptSym) {
+  passHolder += charSym;
+  console.log(passHolder);
+}
+
+for (var i = 0; i < promptLength; i++) {
+  newPassword += passHolder.charAt(
+    Math.floor(Math.random() * passHolder.length)
+  );
+  console.log(newPassword);
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
@@ -12,7 +61,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+  passwordText.value = newPassword;
 }
 
 // Add event listener to generate button

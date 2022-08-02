@@ -18,6 +18,7 @@ function generatePassword() {
     window.alert(
       'must be at least 8 characters, and no more than 128 characters'
     );
+    writePassword();
   }
 
   var promptLower = window.confirm(
@@ -55,6 +56,7 @@ function generatePassword() {
     window.alert(
       'YOU MUST PICK AT LEAST ONE CRITERIA! PLEASE CLICK THE BUTTON, AND START OVER!!'
     );
+    writePassword();
   }
   for (var i = 0; i < promptLength; i++) {
     newPassword += passHolder.charAt(

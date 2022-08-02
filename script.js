@@ -19,51 +19,51 @@ function generatePassword() {
       'must be at least 8 characters, and no more than 128 characters'
     );
     writePassword();
-  }
+  } else {
+    var promptLower = window.confirm(
+      'Do you want your password to conain Lowercase letters?'
+    );
+    if (promptLower) {
+      passHolder += charLower;
+      console.log(passHolder);
+    }
 
-  var promptLower = window.confirm(
-    'Do you want your password to conain Lowercase letters?'
-  );
-  if (promptLower) {
-    passHolder += charLower;
-    console.log(passHolder);
-  }
+    var promptUpper = window.confirm(
+      'Do you want your password to conain Uppercase letters?'
+    );
+    if (promptUpper) {
+      passHolder += charUpper;
+      console.log(passHolder);
+    }
+    var promptNum = window.confirm(
+      'Do you want your password to conain Numbers?'
+    );
+    if (promptNum) {
+      passHolder += charNum;
+      console.log(passHolder);
+    }
 
-  var promptUpper = window.confirm(
-    'Do you want your password to conain Uppercase letters?'
-  );
-  if (promptUpper) {
-    passHolder += charUpper;
-    console.log(passHolder);
+    var promptSym = window.confirm(
+      'Do you want your password to conain Symbols?'
+    );
+    if (promptSym) {
+      passHolder += charSym;
+      console.log(passHolder);
+    }
   }
-  var promptNum = window.confirm(
-    'Do you want your password to conain Numbers?'
-  );
-  if (promptNum) {
-    passHolder += charNum;
-    console.log(passHolder);
-  }
-
-  var promptSym = window.confirm(
-    'Do you want your password to conain Symbols?'
-  );
-  if (promptSym) {
-    passHolder += charSym;
-    console.log(passHolder);
-  }
-
   if ((promptLower, promptNum, promptSym, promptUpper == false)) {
     window.alert(
       'YOU MUST PICK AT LEAST ONE CRITERIA! PLEASE CLICK THE BUTTON, AND START OVER!!'
     );
     writePassword();
+  } else {
+    for (var i = 0; i < promptLength; i++) {
+      newPassword += passHolder.charAt(
+        Math.floor(Math.random() * passHolder.length)
+      );
+    }
+    return newPassword;
   }
-  for (var i = 0; i < promptLength; i++) {
-    newPassword += passHolder.charAt(
-      Math.floor(Math.random() * passHolder.length)
-    );
-  }
-  return newPassword;
 }
 console.log(newPassword);
 

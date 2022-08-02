@@ -51,6 +51,11 @@ function generatePassword() {
     console.log(passHolder);
   }
 
+  if ((promptLower, promptNum, promptSym, promptUpper == false)) {
+    window.alert(
+      'YOU MUST PICK AT LEAST ONE CRITERIA! PLEASE CLICK THE BUTTON, AND START OVER!!'
+    );
+  }
   for (var i = 0; i < promptLength; i++) {
     newPassword += passHolder.charAt(
       Math.floor(Math.random() * passHolder.length)

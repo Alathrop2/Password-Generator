@@ -11,6 +11,11 @@ window.alert(
   'Welcome to the Password Generator! you will be given a few prompts, to determine the characters used in your password. Pleasae answer all of the questions. OK=yes, CACNEL=no'
 );
 function generatePassword() {
+  passHolder = '';
+  newPassword = '';
+  console.log(passHolder);
+  console.log(newPassword);
+  console.log('beginning');
   var promptLength = window.prompt(
     'First choose the length of your password! It must be at least 8 characters, but no more than 128'
   );
@@ -18,7 +23,7 @@ function generatePassword() {
     window.alert(
       'must be at least 8 characters, and no more than 128 characters'
     );
-    writePassword();
+    console.log(promptLength);
   } else {
     var promptLower = window.confirm(
       'Do you want your password to conain Lowercase letters?'
@@ -51,21 +56,20 @@ function generatePassword() {
       console.log(passHolder);
     }
   }
-  if ((promptLower, promptNum, promptSym, promptUpper == false)) {
+  if (!promptLower && !promptNum && !promptSym && !promptUpper) {
     window.alert(
       'YOU MUST PICK AT LEAST ONE CRITERIA! PLEASE CLICK THE BUTTON, AND START OVER!!'
     );
-    writePassword();
   } else {
     for (var i = 0; i < promptLength; i++) {
       newPassword += passHolder.charAt(
         Math.floor(Math.random() * passHolder.length)
       );
     }
+    console.log(newPassword);
     return newPassword;
   }
 }
-console.log(newPassword);
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');

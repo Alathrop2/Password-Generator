@@ -15,7 +15,7 @@ function generatePassword() {
   newPassword = '';
   console.log(passHolder);
   console.log(newPassword);
-  console.log('beginning');
+
   var promptLength = window.prompt(
     'First choose the length of your password! It must be at least 8 characters, but no more than 128'
   );
